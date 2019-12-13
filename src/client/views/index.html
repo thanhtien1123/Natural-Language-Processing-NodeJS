@@ -1,0 +1,31 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/style.scss" type="text/scss">
+    <title>NPL</title>
+</head>
+<body>
+    <section>
+        <form class="form" onsubmit="return Client.handleSubmit(event)">
+            <input id="name" type="text" name="input" value="" placeholder="Search" class="text">
+            <input type="submit" name="submit" value="SUBMIT" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)" class="button">
+        </form>
+    <section>
+
+    <section>
+        <h1 class="result"><strong>Form Results:</strong></h1>
+        <div id="popularity"></div>
+        <div id="subjectivity"></div>
+    </section>
+
+    <script>
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+            });
+        }
+    </script>    
+</body>
+</html>
