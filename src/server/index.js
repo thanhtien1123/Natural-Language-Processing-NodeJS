@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
@@ -14,10 +13,10 @@ app.use(cors());
 app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve('dist/index.html'))
+  res.sendFile('dist/index.html')
 })
 
-app.post('/sentiment', textapi)
+app.get('/sentiment', textapi)
 
 app.listen(3000, () => {
   console.log('Server started on 3000');

@@ -7,9 +7,14 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',
+    devServer: {
+        inline: false,
+        hot: false
+    },
     output: {
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
